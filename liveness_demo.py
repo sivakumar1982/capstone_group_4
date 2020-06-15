@@ -96,7 +96,10 @@ while True:
 			# draw the label and bounding box on the frame
 
 			print(label, preds[j])
-			label = "{}: {:.4f}".format(label, preds[j])
+			if preds[j] * 100 >= 85:
+				label = "{}: {:.4f}".format(label, preds[j])
+			else:
+				label = "{}: {:.4f}".format("Unknown", preds[j])
 			cv2.putText(frame, label, (startX, startY - 10),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 			cv2.rectangle(frame, (startX, startY), (endX, endY),
