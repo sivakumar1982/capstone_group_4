@@ -1,7 +1,7 @@
 First the videos in the videos folder has to be processed.
 Use the below cmd for the same :
 
-python gather_examples.py --input videos --output dataset --detector face_detector --skip 3
+      python gather_examples.py --input videos --output dataset --detector face_detector --skip 3
 
 
 --input -> video folder under src dir
@@ -16,7 +16,8 @@ python gather_examples.py --input videos --output dataset --detector face_detect
 Note : New folders under dataset will be created by the name of the videos in the video folder
 
 Once the images embeddings are obtained, the same has to be trained.
-python train_liveness.py --dataset dataset --model liveness.h5 --le le.pickle
+
+      python train_liveness.py --dataset dataset --model liveness.h5 --le le.pickle
 
 This file uses a tensorflow neural net created under folder Liveliness
 
@@ -29,7 +30,7 @@ This file uses a tensorflow neural net created under folder Liveliness
 
 Once the Model is trained we can use it to run LiveCam Detection
 
-python liveness_demo.py --model liveness.h5 --le le.pickle --detector face_detector
+      python liveness_demo.py --model liveness.h5 --le le.pickle --detector face_detector
 
 --model -> our previously trained and saved model
 
